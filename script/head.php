@@ -85,7 +85,7 @@
 
           switch ($item['menu_item']) {
               case "Главная":
-                  $href = "main.php";
+                  $href = "catalog.php";
                   break;
               case "Каталог":
                   $href = "catalog.php?category=$menu_name";
@@ -97,13 +97,8 @@
                   $href = "finder.php";
                   break;
               case "Личный кабинет":
-                  if(empty)
-                  {
                     $href = "catalog.php";
-                  }else
-                  {
-                  $href = "registration.php";
-                  }
+                    $href = "registration.php";
                   break;
               default:
                   $href = "#";
@@ -111,9 +106,13 @@
       } else {
           $href .= "&sub[]=" . $menu_name;
       }
-
+      if (isset($_SESSION['account']) && $item['menu_item'] != "Личный кабинет")
+      {
       echo "<li><a href='$href' onclick='get_plant_category(" . $item['id'] . ")'>" . $item['menu_item'] . "</a>";
-
+      } else if (!isset($_SESSION['account']))
+      {
+        echo "<li><a href='$href' onclick='get_plant_category(" . $item['id'] . ")'>" . $item['menu_item'] . "</a>";
+      }
       view_category($arr, $item['id'], $href);
 
       echo "</li>";

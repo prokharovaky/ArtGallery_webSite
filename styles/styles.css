@@ -407,14 +407,14 @@ a.vhodButton
     li:hover > ul {
       /* display: block;  */
     }
-    .menu a, li {
+    .menu a, li{
       width: max-content;
       font-weight: 100;
       text-decoration: none;
       color: rgb(255, 255, 255);
       /* display: block; */
-      font-size: 20px;
-      padding: 5px 10px;
+      font-size: 24px;
+      padding: 5px 20px;
     }
     .menu a:hover {
       color: #ffffff;
@@ -425,6 +425,17 @@ a.vhodButton
     /* display: block;  */
 } 
 
+
+.footer_menu p a 
+{
+    width: max-content;
+      font-weight: 100;
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      /* display: block; */
+      font-size: 24px;
+      padding: 5px 10px;
+}
 
 main.main
 {
